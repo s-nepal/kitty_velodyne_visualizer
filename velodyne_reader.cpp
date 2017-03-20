@@ -158,12 +158,12 @@ int main()
 		    cloud->points.push_back(sample);
 		    px+=4; py+=4; pz+=4; pr+=4;
 		}
-		cout << num << endl;
+		// cout << num << endl;
 		fclose(stream);
 		//blocks until the cloud is actually rendered
  		viewer.showCloud(cloud);
 
- 		usleep(100000);
+ 		usleep(300000);
 
  		cloud->points.clear();
 
@@ -178,8 +178,8 @@ int main()
 		// delete py;
 		// delete pz;
 		// delete pr;
-		cout << ctr << endl;
-		if(ctr == sizeof(file_path)/sizeof(file_path[0])){
+		// cout << ctr << endl;
+		if(ctr == num_files){
 			cout << "Exiting" << endl;
 			// while(1){
 
