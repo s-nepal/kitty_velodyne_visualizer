@@ -13,19 +13,6 @@
 
 using namespace std;
 
-// string file_path;
-// file_path = "2011_09_26_drive_0001_sync/velodyne_points/data/0000000000.bin";
-// file_path[0] = "2011_09_26_drive_0001_sync/velodyne_points/data/0000000000.bin";
-// file_path[1] = "2011_09_26_drive_0001_sync/velodyne_points/data/0000000001.bin";
-// file_path[2] = "2011_09_26_drive_0001_sync/velodyne_points/data/0000000002.bin";
-// file_path[3] = "2011_09_26_drive_0001_sync/velodyne_points/data/0000000003.bin";
-// file_path[4] = "2011_09_26_drive_0001_sync/velodyne_points/data/0000000004.bin";
-// file_path[5] = "2011_09_26_drive_0001_sync/velodyne_points/data/0000000005.bin";
-// file_path[6] = "2011_09_26_drive_0001_sync/velodyne_points/data/0000000006.bin";
-// file_path[7] = "2011_09_26_drive_0001_sync/velodyne_points/data/0000000007.bin";
-// file_path[8] = "2011_09_26_drive_0001_sync/velodyne_points/data/0000000008.bin";
-// file_path[9] = "2011_09_26_drive_0001_sync/velodyne_points/data/0000000009.bin";
-
 void 
 viewerOneOff (pcl::visualization::PCLVisualizer& viewer)
 {
@@ -99,16 +86,8 @@ int main()
 
 	viewer.runOnVisualizationThreadOnce (viewerOneOff);
 
-	// int32_t num = 1000000;
-	// float *data = (float*)malloc(num*sizeof(float));
-
-	// pointers
-	// float *px = data+0;
-	// float *py = data+1;
-	// float *pz = data+2;
-	// float *pr = data+3;
-
-	string file_path[20];
+	int num_files = 40;
+	string file_path[num_files];
 	file_path[0] = "2011_09_26_drive_0001_sync/velodyne_points/data/0000000000.bin";
 	file_path[1] = "2011_09_26_drive_0001_sync/velodyne_points/data/0000000001.bin";
 	file_path[2] = "2011_09_26_drive_0001_sync/velodyne_points/data/0000000002.bin";
@@ -129,6 +108,26 @@ int main()
 	file_path[17] = "2011_09_26_drive_0001_sync/velodyne_points/data/0000000017.bin";
 	file_path[18] = "2011_09_26_drive_0001_sync/velodyne_points/data/0000000018.bin";
 	file_path[19] = "2011_09_26_drive_0001_sync/velodyne_points/data/0000000019.bin";
+	file_path[20] = "2011_09_26_drive_0001_sync/velodyne_points/data/0000000020.bin";
+	file_path[21] = "2011_09_26_drive_0001_sync/velodyne_points/data/0000000021.bin";
+	file_path[22] = "2011_09_26_drive_0001_sync/velodyne_points/data/0000000022.bin";
+	file_path[23] = "2011_09_26_drive_0001_sync/velodyne_points/data/0000000023.bin";
+	file_path[24] = "2011_09_26_drive_0001_sync/velodyne_points/data/0000000024.bin";
+	file_path[25] = "2011_09_26_drive_0001_sync/velodyne_points/data/0000000025.bin";
+	file_path[26] = "2011_09_26_drive_0001_sync/velodyne_points/data/0000000026.bin";
+	file_path[27] = "2011_09_26_drive_0001_sync/velodyne_points/data/0000000027.bin";
+	file_path[28] = "2011_09_26_drive_0001_sync/velodyne_points/data/0000000028.bin";
+	file_path[29] = "2011_09_26_drive_0001_sync/velodyne_points/data/0000000029.bin";
+	file_path[30] = "2011_09_26_drive_0001_sync/velodyne_points/data/0000000030.bin";
+	file_path[31] = "2011_09_26_drive_0001_sync/velodyne_points/data/0000000031.bin";
+	file_path[32] = "2011_09_26_drive_0001_sync/velodyne_points/data/0000000032.bin";
+	file_path[33] = "2011_09_26_drive_0001_sync/velodyne_points/data/0000000033.bin";
+	file_path[34] = "2011_09_26_drive_0001_sync/velodyne_points/data/0000000034.bin";
+	file_path[35] = "2011_09_26_drive_0001_sync/velodyne_points/data/0000000035.bin";
+	file_path[36] = "2011_09_26_drive_0001_sync/velodyne_points/data/0000000036.bin";
+	file_path[37] = "2011_09_26_drive_0001_sync/velodyne_points/data/0000000037.bin";
+	file_path[38] = "2011_09_26_drive_0001_sync/velodyne_points/data/0000000038.bin";
+	file_path[39] = "2011_09_26_drive_0001_sync/velodyne_points/data/0000000039.bin";
 
 	// load point cloud
 	int ctr = 0;
@@ -164,7 +163,7 @@ int main()
 		//blocks until the cloud is actually rendered
  		viewer.showCloud(cloud);
 
- 		usleep(1000000);
+ 		usleep(100000);
 
  		cloud->points.clear();
 
@@ -179,8 +178,8 @@ int main()
 		// delete py;
 		// delete pz;
 		// delete pr;
-
-		if(ctr == 20){
+		cout << ctr << endl;
+		if(ctr == sizeof(file_path)/sizeof(file_path[0])){
 			cout << "Exiting" << endl;
 			// while(1){
 
@@ -189,6 +188,7 @@ int main()
 		}
 		
 	}
+
 
 	return 0;  
 }
