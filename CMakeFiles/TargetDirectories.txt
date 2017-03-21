@@ -1,0 +1,3 @@
+/home/s_nepal/kitty_velodyne_visualizer/CMakeFiles/rebuild_cache.dir
+/home/s_nepal/kitty_velodyne_visualizer/CMakeFiles/edit_cache.dir
+/home/s_nepal/kitty_velodyne_visualizer/CMakeFiles/velodyne_reader.dir

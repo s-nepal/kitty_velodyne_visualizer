@@ -86,6 +86,7 @@ int main()
 
 	viewer.runOnVisualizationThreadOnce (viewerOneOff);
 
+	// For now, the filenames are input manually
 	int num_files = 40;
 	string file_path[num_files];
 	file_path[0] = "2011_09_26_drive_0001_sync/velodyne_points/data/0000000000.bin";
@@ -145,6 +146,12 @@ int main()
 
 		const char* x = file_path[ctr].c_str();
 		stream = fopen (x, "rb");
+
+		if(stream == NULL){
+			cout << file_path[ctr] << " not found. Ensure that the file path is correct." << endl;
+			return 0;
+		}
+
 		num = fread(data,sizeof(float),num,stream)/4;
 		for (int32_t i=0; i<num; i++) {
 
